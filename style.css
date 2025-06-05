@@ -102,6 +102,7 @@ main {
   display: flex;
   justify-content: center;
   gap: 16px;
+  margin-right: 65px;
 }
 
 .social-icons a {
@@ -236,11 +237,11 @@ footer {
   padding: 6px 0;          /* тонкая высота */
   width: 100vw;            /* на всю ширину окна */
   max-width: 100%;         /* не выходить за пределы */
-  background: #fce29a;
+  background: #2a7f3d;
   border-radius: 0;        /* без скруглений для тонкой линии */
   font-size: 14px;
   line-height: 1.4;
-  color: #2a7f3d;
+  color: #ffffff;
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
