@@ -1,0 +1,300 @@
+/* Основные стили для body и контейнеров */
+body {
+  font-family: "Helvetica", sans-serif;
+  background-color: #f6f8fa;
+  color: #24292f;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+main {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Секция контактов */
+/* Контейнер "Мои контакты" */
+.links {
+  width: 320px;
+  margin: 0 auto 50px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  padding: 24px 20px 30px;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", sans-serif;
+}
+
+/* Заголовок */
+.links__header {
+  font-size: 28px;
+  font-weight: 700;
+  color: #2a7f3d;
+  text-align: center;
+  margin-bottom: 24px;
+  letter-spacing: 0.05em;
+  border-bottom: 3px solid #68dd8b;
+  padding-bottom: 8px;
+  user-select: none;
+}
+
+/* Список контактов */
+.links__container {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Каждый контакт */
+.links__link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #e0f7e9;
+  border-radius: 20px;
+  padding: 12px 20px;
+  box-shadow: 0 3px 8px rgba(42, 127, 61, 0.15);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.links__link:hover {
+  background-color: #68dd8b;
+  box-shadow: 0 6px 14px rgba(104, 221, 139, 0.6);
+}
+
+.links__title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2a7f3d;
+  min-width: 110px;
+  user-select: none;
+}
+
+/* Ссылка */
+.linsk__link {
+  font-size: 16px;
+  color: #2a7f3d;
+  text-decoration: none;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+  max-width: 180px;
+  overflow-wrap: break-word;
+}
+
+.linsk__link:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Социальные иконки */
+.social-icons {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.social-icons a {
+  display: inline-flex;
+  border-radius: 50%;
+  background: #e0f7e9;
+  padding: 10px;
+  box-shadow: 0 3px 8px rgba(42, 127, 61, 0.15);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-icons a:hover {
+  background-color: #68dd8b;
+  box-shadow: 0 6px 14px rgba(104, 221, 139, 0.6);
+}
+
+.social-icons a svg {
+  width: 28px;
+  height: 28px;
+  fill: #2a7f3d;
+  transition: fill 0.3s ease;
+}
+
+.social-icons a:hover svg {
+  fill: #fff;
+}
+
+/* Секция стека — облачки, которые "улетают" от курсора */
+
+/* Контейнер стека — flex с переносом */
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px 32px;
+  max-width: 1200px;
+  margin: 40px auto 60px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  perspective: 800px; /* для 3D эффекта */
+}
+
+/* Каждая группа — облачко */
+.stack__group {
+  position: relative;
+  transition: transform 0.3s ease;
+  background: #e0f7e9;
+  border-radius: 40px;
+  padding: 24px 32px;
+  min-width: 260px;
+  max-width: 320px;
+  box-shadow:
+    0 8px 20px rgba(42, 127, 61, 0.25),
+    inset 0 0 40px rgba(104, 221, 139, 0.4);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: default;
+  user-select: none;
+  will-change: transform;
+  /* Легкий градиент для объёма */
+  background-image:
+    radial-gradient(circle at 30% 30%, #a9e9b8, #68dd8b 70%);
+}
+
+/* Заголовок группы */
+.stack__group-title {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 20px;
+  color: #2a7f3d;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-shadow: 0 1px 1px rgba(255 255 255 / 0.6);
+}
+
+/* Список навыков */
+.stack__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 14px;
+}
+
+/* Навыки — маленькие облачка */
+.stack__item {
+  background: #c3f0c9;
+  color: #1f4d2a;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow:
+    0 2px 6px rgba(42, 127, 61, 0.25),
+    inset 0 0 8px rgba(104, 221, 139, 0.5);
+  white-space: nowrap;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+  user-select: none;
+}
+
+.stack__item:hover {
+  background-color: #68dd8b;
+  color: #fff;
+  box-shadow:
+    0 4px 12px rgba(104, 221, 139, 0.8),
+    inset 0 0 12px rgba(255 255 255 / 0.7);
+}
+
+/* Эффект "улетающего облачка" при наведении на группу */
+.stack__group[data-hovered="true"] {
+  animation: flyAway 0.6s forwards;
+  z-index: 10;
+}
+
+
+/* Кнопка в футере */
+footer {
+  margin: 0 0 40px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.button-link {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 0;          /* тонкая высота */
+  width: 100vw;            /* на всю ширину окна */
+  max-width: 100%;         /* не выходить за пределы */
+  background: #fce29a;
+  border-radius: 0;        /* без скруглений для тонкой линии */
+  font-size: 14px;
+  line-height: 1.4;
+  color: #2a7f3d;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  position: fixed;         /* чтобы всегда была внизу экрана */
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 -1px 5px rgba(0,0,0,0.1);
+}
+
+.button-link:hover {
+  background-color: #68dd8b;
+  color: #fff;
+  box-shadow: 0 1px 0 rgba(27, 31, 36, 0.1);
+}
+
+/* Заголовки в хедере */
+.header {
+  margin: 40px 0;
+  text-align: center;
+}
+
+.header__avatar {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto;
+  border: 4px solid transparent;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+  display: block;
+}
+
+.header__avatar:hover {
+  border: 4px solid #68dd8b;
+  box-shadow: 0 0 12px rgba(182, 240, 107, 0.4);
+}
+
+.header__title {
+  margin: 30px 0 10px 0;
+  font-size: 32px;
+  line-height: 1.2;
+  font-family: "Helvetica Neue", sans-serif;
+  color: #24292f;
+}
+
+.header__subtitle {
+  color: #24292f;
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 0;
+}
+
+
+
+
+
