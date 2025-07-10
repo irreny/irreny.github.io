@@ -36,11 +36,11 @@ main {
 .links__header {
   font-size: 28px;
   font-weight: 700;
-  color: #2a7f3d;
+  color: #1e3a8a;
   text-align: center;
   margin-bottom: 24px;
   letter-spacing: 0.05em;
-  border-bottom: 3px solid #68dd8b;
+  border-bottom: 3px solid #3b82f6;
   padding-bottom: 8px;
   user-select: none;
 }
@@ -60,23 +60,23 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #e0f7e9;
+  background: #bfdbfe;
   border-radius: 20px;
   padding: 12px 20px;
-  box-shadow: 0 3px 8px rgba(42, 127, 61, 0.15);
+  box-shadow: 0 3px 8px rgba(30, 58, 138, 0.15);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   cursor: default;
 }
 
 .links__link:hover {
-  background-color: #68dd8b;
-  box-shadow: 0 6px 14px rgba(104, 221, 139, 0.6);
+  background-color: #3b82f6;
+  box-shadow: 0 6px 14px rgba(59, 130, 246, 0.6);
 }
 
 .links__title {
   font-size: 16px;
   font-weight: 600;
-  color: #2a7f3d;
+  color: #1e3a8a;
   min-width: 110px;
   user-select: none;
 }
@@ -84,7 +84,7 @@ main {
 /* Ссылка */
 .linsk__link {
   font-size: 16px;
-  color: #2a7f3d;
+  color: #1e3a8a;
   text-decoration: none;
   transition: color 0.3s ease, text-decoration 0.3s ease;
   max-width: 180px;
@@ -108,21 +108,21 @@ main {
 .social-icons a {
   display: inline-flex;
   border-radius: 50%;
-  background: #e0f7e9;
+  background: #bfdbfe;
   padding: 10px;
-  box-shadow: 0 3px 8px rgba(42, 127, 61, 0.15);
+  box-shadow: 0 3px 8px rgba(30, 58, 138, 0.15);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .social-icons a:hover {
-  background-color: #68dd8b;
-  box-shadow: 0 6px 14px rgba(104, 221, 139, 0.6);
+  background-color: #3b82f6;
+  box-shadow: 0 6px 14px rgba(59, 130, 246, 0.6);
 }
 
 .social-icons a svg {
   width: 28px;
   height: 28px;
-  fill: #2a7f3d;
+  fill: #1e3a8a;
   transition: fill 0.3s ease;
 }
 
@@ -149,21 +149,21 @@ main {
 .stack__group {
   position: relative;
   transition: transform 0.3s ease;
-  background: #e0f7e9;
+  background: #bfdbfe;
   border-radius: 40px;
   padding: 24px 32px;
   min-width: 260px;
   max-width: 320px;
   box-shadow:
-    0 8px 20px rgba(42, 127, 61, 0.25),
-    inset 0 0 40px rgba(104, 221, 139, 0.4);
+    0 8px 20px rgba(30, 58, 138, 0.25),
+    inset 0 0 40px rgba(59, 130, 246, 0.4);
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: default;
   user-select: none;
   will-change: transform;
   /* Легкий градиент для объёма */
   background-image:
-    radial-gradient(circle at 30% 30%, #a9e9b8, #68dd8b 70%);
+    radial-gradient(circle at 30% 30%, #f97316, #3b82f6 70%);
 }
 
 /* Заголовок группы */
@@ -172,7 +172,7 @@ main {
   font-size: 20px;
   font-weight: 700;
   margin: 0 0 20px;
-  color: #2a7f3d;
+  color: #1e3a8a;
   text-align: center;
   letter-spacing: 0.03em;
   text-shadow: 0 1px 1px rgba(255 255 255 / 0.6);
@@ -191,15 +191,15 @@ main {
 
 /* Навыки — маленькие облачка */
 .stack__item {
-  background: #c3f0c9;
-  color: #1f4d2a;
+  background: #f5f3f1;
+  color: #a78b6f;
   padding: 6px 16px;
   border-radius: 20px;
   font-weight: 600;
   font-size: 0.9rem;
   box-shadow:
-    0 2px 6px rgba(42, 127, 61, 0.25),
-    inset 0 0 8px rgba(104, 221, 139, 0.5);
+    0 2px 6px rgba(30, 58, 138, 0.25),
+    inset 0 0 8px rgba(59, 130, 246, 0.5);
   white-space: nowrap;
   transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
   cursor: default;
@@ -207,10 +207,10 @@ main {
 }
 
 .stack__item:hover {
-  background-color: #68dd8b;
+  background-color: #3b82f6;
   color: #fff;
   box-shadow:
-    0 4px 12px rgba(104, 221, 139, 0.8),
+    0 4px 12px rgba(59, 130, 246, 0.8),
     inset 0 0 12px rgba(255 255 255 / 0.7);
 }
 
@@ -219,7 +219,6 @@ main {
   animation: flyAway 0.6s forwards;
   z-index: 10;
 }
-
 
 /* Кнопка в футере */
 footer {
@@ -237,7 +236,7 @@ footer {
   padding: 6px 0;          /* тонкая высота */
   width: 100vw;            /* на всю ширину окна */
   max-width: 100%;         /* не выходить за пределы */
-  background: #2a7f3d;
+  background: #1e3a8a;
   border-radius: 0;        /* без скруглений для тонкой линии */
   font-size: 14px;
   line-height: 1.4;
@@ -253,7 +252,7 @@ footer {
 }
 
 .button-link:hover {
-  background-color: #68dd8b;
+  background-color: #3b82f6;
   color: #fff;
   box-shadow: 0 1px 0 rgba(27, 31, 36, 0.1);
 }
@@ -276,8 +275,8 @@ footer {
 }
 
 .header__avatar:hover {
-  border: 4px solid #68dd8b;
-  box-shadow: 0 0 12px rgba(182, 240, 107, 0.4);
+  border: 4px solid #3b82f6;
+  box-shadow: 0 0 12px rgba(249, 115, 22, 0.4);
 }
 
 .header__title {
@@ -294,8 +293,3 @@ footer {
   line-height: 1.4;
   margin: 0;
 }
-
-
-
-
-
