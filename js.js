@@ -3,7 +3,7 @@ const button = document.querySelector('button');
 
 /* Тут на кнопку навешиваем обрабочик, который ждёт клика и тогда запустит логику */
 button.addEventListener('click', function() {
-	alert('Главное не всё знать, а загуглить на английском')
+	alert('lets keep going :) ')
 })
 
 const stack = document.querySelector('.stack');
