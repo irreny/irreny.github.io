@@ -1,295 +1,452 @@
-/* Основные стили для body и контейнеров */
+:root{
+  --accent:#0d9488;
+  --bg:#ffffff;
+  --muted:#6b7280;
+  --card:#f8fafc;
+  --radius:12px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+*{box-sizing:border-box}
+
+/* Общие настройки */
 body {
-  font-family: "Helvetica", sans-serif;
-  background-color: #f6f8fa;
-  color: #24292f;
+  font-family: 'Segoe UI', sans-serif;
   margin: 0;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-  box-sizing: border-box;
-}
-
-main {
-  width: 100%;
-  max-width: 1200px;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
-
-/* Секция контактов */
-/* Контейнер "Мои контакты" */
-.links {
-  width: 320px;
-  margin: 0 auto 50px;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  padding: 24px 20px 30px;
-  box-sizing: border-box;
-  font-family: "Helvetica Neue", sans-serif;
-}
-
-/* Заголовок */
-.links__header {
-  font-size: 28px;
-  font-weight: 700;
-  color: #1e3a8a;
-  text-align: center;
-  margin-bottom: 24px;
-  letter-spacing: 0.05em;
-  border-bottom: 3px solid #3b82f6;
-  padding-bottom: 8px;
-  user-select: none;
-}
-
-/* Список контактов */
-.links__container {
-  list-style: none;
   padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
+  background: #f4f7fa;
+  color: #333;
 }
 
-/* Каждый контакт */
-.links__link {
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1, h2, h3 {
+  margin: 0 0 12px;
+  color: #2b3a42;
+}
+
+h1 {
+  font-size: 28px;
+}
+
+h2 {
+  font-size: 24px;
+  border-left: 4px solid #0d9488;
+  padding-left: 10px;
+}
+
+h3 {
+  font-size: 18px;
+  margin-top: 16px;
+}
+
+/* Верхняя часть: фото + контакты */
+.top-row {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  background: #bfdbfe;
-  border-radius: 20px;
-  padding: 12px 20px;
-  box-shadow: 0 3px 8px rgba(30, 58, 138, 0.15);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  cursor: default;
-}
-
-.links__link:hover {
-  background-color: #3b82f6;
-  box-shadow: 0 6px 14px rgba(59, 130, 246, 0.6);
-}
-
-.links__title {
-  font-size: 16px;
-  font-weight: 600;
-  color: #1e3a8a;
-  min-width: 110px;
-  user-select: none;
-}
-
-/* Ссылка */
-.linsk__link {
-  font-size: 16px;
-  color: #1e3a8a;
-  text-decoration: none;
-  transition: color 0.3s ease, text-decoration 0.3s ease;
-  max-width: 180px;
-  overflow-wrap: break-word;
-}
-
-.linsk__link:hover {
-  color: #fff;
-  text-decoration: underline;
-}
-
-/* Социальные иконки */
-.social-icons {
-  margin-top: 28px;
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  margin-right: 65px;
-}
-
-.social-icons a {
-  display: inline-flex;
-  border-radius: 50%;
-  background: #bfdbfe;
-  padding: 10px;
-  box-shadow: 0 3px 8px rgba(30, 58, 138, 0.15);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.social-icons a:hover {
-  background-color: #3b82f6;
-  box-shadow: 0 6px 14px rgba(59, 130, 246, 0.6);
-}
-
-.social-icons a svg {
-  width: 28px;
-  height: 28px;
-  fill: #1e3a8a;
-  transition: fill 0.3s ease;
-}
-
-.social-icons a:hover svg {
-  fill: #fff;
-}
-
-/* Секция стека — облачки, которые "улетают" от курсора */
-
-/* Контейнер стека — flex с переносом */
-.stack {
-  display: flex;
+  align-items: flex-start;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 24px 32px;
-  max-width: 1200px;
-  margin: 40px auto 60px;
-  padding: 0 20px;
-  box-sizing: border-box;
-  perspective: 800px; /* для 3D эффекта */
 }
 
-/* Каждая группа — облачко */
-.stack__group {
-  position: relative;
-  transition: transform 0.3s ease;
-  background: #bfdbfe;
-  border-radius: 40px;
-  padding: 24px 32px;
-  min-width: 260px;
-  max-width: 320px;
-  box-shadow:
-    0 8px 20px rgba(30, 58, 138, 0.25),
-    inset 0 0 40px rgba(59, 130, 246, 0.4);
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: default;
-  user-select: none;
-  will-change: transform;
-  /* Легкий градиент для объёма */
-  background-image:
-    radial-gradient(circle at 30% 30%, #f97316, #3b82f6 70%);
-}
-
-/* Заголовок группы */
-.stack__group-title {
-  font-family: "Helvetica Neue", sans-serif;
-  font-size: 20px;
-  font-weight: 700;
-  margin: 0 0 20px;
-  color: #1e3a8a;
-  text-align: center;
-  letter-spacing: 0.03em;
-  text-shadow: 0 1px 1px rgba(255 255 255 / 0.6);
-}
-
-/* Список навыков */
-.stack__list {
-  list-style: none;
-  padding: 0;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px 14px;
-}
-
-/* Навыки — маленькие облачка */
-.stack__item {
-  background: #f5f3f1;
-  color: #a78b6f;
-  padding: 6px 16px;
-  border-radius: 20px;
-  font-weight: 600;
-  font-size: 0.9rem;
-  box-shadow:
-    0 2px 6px rgba(30, 58, 138, 0.25),
-    inset 0 0 8px rgba(59, 130, 246, 0.5);
-  white-space: nowrap;
-  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-  cursor: default;
-  user-select: none;
-}
-
-.stack__item:hover {
-  background-color: #3b82f6;
-  color: #fff;
-  box-shadow:
-    0 4px 12px rgba(59, 130, 246, 0.8),
-    inset 0 0 12px rgba(255 255 255 / 0.7);
-}
-
-/* Эффект "улетающего облачка" при наведении на группу */
-.stack__group[data-hovered="true"] {
-  animation: flyAway 0.6s forwards;
-  z-index: 10;
-}
-
-/* Кнопка в футере */
-footer {
-  margin: 0 0 40px 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.button-link {
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 6px 0;          /* тонкая высота */
-  width: 100vw;            /* на всю ширину окна */
-  max-width: 100%;         /* не выходить за пределы */
-  background: #1e3a8a;
-  border-radius: 0;        /* без скруглений для тонкой линии */
-  font-size: 14px;
-  line-height: 1.4;
-  color: #ffffff;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  position: fixed;         /* чтобы всегда была внизу экрана */
-  bottom: 0;
-  left: 0;
-  z-index: 1000;
-  box-shadow: 0 -1px 5px rgba(0,0,0,0.1);
-}
-
-.button-link:hover {
-  background-color: #3b82f6;
-  color: #fff;
-  box-shadow: 0 1px 0 rgba(27, 31, 36, 0.1);
-}
-
-/* Заголовки в хедере */
 .header {
-  margin: 40px 0;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
-.header__avatar {
-  width: 300px;
-  height: 300px;
+.avatar img {
+  width: 110px;
+  height: 110px;
   object-fit: cover;
   border-radius: 50%;
-  margin: 0 auto;
-  border: 4px solid transparent;
-  transition: border 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid #ccc;
+}
+
+.portfolio-box {
+  display: inline-block;
+  margin: 18px 0;
+  padding: 14px 12px;
+  background: #f0f0f0;
+  border: 2px solid #333;
+  border-radius: 16px;
+  font-weight: bold;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+
+.contacts a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.btn {
+  display: inline-block;
+  background: #0d9488;
+  color: #fff !important;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #0d9488;
+}
+
+/* Miro кнопка */
+.btn-miro {
+  display: inline-block;
+  padding: 12px 20px;
+  background: #ffcb45;
+  color: #333;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: 0.3s;
+}
+.btn-miro:hover {
+  background: #ffb800;
+}
+
+/* Секции */
+.section {
+  margin-top: 40px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Сетка 2 колонки */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Стили для нового блока Tech Stack (#tech-stack) --- */
+.tools-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: var(--card); /* Светлый фон */
+    color: var(--accent); /* Синий текст */
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.badge:hover {
+    background-color: #e0f2ff;
+}
+
+.projects-list {
+    display: grid;
+    gap: 15px;
+}
+
+.project-item {
+    padding: 12px;
+    border-left: 3px solid var(--accent);
+    background: var(--card);
+    border-radius: 6px;
+}
+
+.project-item h4 {
+    margin: 0 0 4px 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.project-item h4 a {
+    color: #0f172a; /* Темный цвет для заголовка */
+    text-decoration: none;
+}
+.project-item h4 a:hover {
+    color: var(--accent);
+}
+
+.project-item p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--muted);
+}
+
+/* --- Стили для выравнивания ширины заголовков таблиц --- */
+
+/* Общий стиль для всех заголовков в таблицах (для большей читабельности) */
+table th {
+  white-space: nowrap; /* Предотвращает перенос текста в заголовке */
+}
+
+/* Фиксация ширины для двухколоночных таблиц (SQL, Python) */
+#sqlTable th:first-child, 
+#pyTable th:first-child {
+    width: 35%; /* Отдаем 35% первой колонке (Тема) */
+}
+#sqlTable th:last-child, 
+#pyTable th:last-child {
+    width: 65%; /* Отдаем 65% второй колонке (Пример/Описание) */
+}
+
+/* Фиксация ширины для трехколоночной таблицы (Техники тест-дизайна) */
+#techTable th:nth-child(1) {
+    width: 25%; /* Техника */
+}
+#techTable th:nth-child(2) {
+    width: 45%; /* Описание */
+}
+#techTable th:nth-child(3) {
+    width: 30%; /* Пример */
+}
+
+/* Стили для Data Analysis Dashboard */
+#dashboard-metrics {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-top: 10px;
+}
+
+.metric-card {
+    background: var(--card);
+    padding: 15px;
+    border-radius: var(--radius);
+    border: 1px solid #e6eef7;
+    text-align: center;
+}
+.metric-card h4 {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 4px;
+}
+.metric-card p {
+    font-size: 24px;
+    font-weight: 600;
+    color: #0f172a;
+}
+.metric-card.accent p {
+    color: var(--accent); /* Синий для Pass Rate */
+}
+.metric-card.error p {
+    color: #ef4444; 
+}  
+
+/* Таблицы */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+table th {
+  background: #e9ecef;
+  text-align: left;
+}
+
+/* Статичные блоки SQL/Python */
+.static-item {
+  background: #f8f9fa;
+  border-left: 4px solid #0d9488;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+}
+
+.static-item .title {
+  font-weight: bold;
+  margin-bottom: 6px;
+  font-size: 15px;
+}
+
+.static-item .content {
+  white-space: pre-wrap;
+  font-family: Consolas, monospace;
+  font-size: 14px;
+}
+
+/* 🔍 Увеличение изображения (Lightbox) */
+.zoomable {
+  max-width: 280px;
+  cursor: zoom-in;
+  border-radius: 6px;
+  transition: transform 0.3s;
+}
+.zoomable:hover {
+  transform: scale(1.03);
+}
+
+/* --- Стили для центрирования Bug Report --- */
+/* Контейнер, который центрирует изображение баг-репорта */
+.bugreport-container .image-center-wrapper {
+    display: flex;
+    justify-content: center; /* Центрирует содержимое (изображение) по горизонтали */
+    /* Убедитесь, что .zoomable img имеет достаточный max-width для центрирования */
+}
+
+/* Стили для ссылки Miro, чтобы она была во всю ширину колонки */
+.full-width-link {
+    display: block; /* Делает ссылку блочным элементом, чтобы занять всю ширину */
+    width: 100%;
+    padding: 10px 15px; /* Немного увеличим для лучшего нажатия */
+    text-align: center;
+    border-radius: var(--radius);
+    background-color: #0d9488; /* Добавим другой цвет или используем акцент */
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+.full-width-link:hover {
+    background-color: #0f766e;
+}
+
+/* Настраиваем изображение баг-репорта внутри нового контейнера */
+.bugreport-container .zoomable {
+    max-width: 250px; /* Установим адекватную максимальную ширину для центрирования */
+}
+
+#imgModal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.8);
+}
+#imgModal img {
   display: block;
+  max-width: 80%;
+  max-height: 80%;
+  margin: 60px auto;
+  box-shadow: 0 0 10px #000;
+  border-radius: 10px;
+}
+#imgModal span {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  cursor: pointer;
 }
 
-.header__avatar:hover {
-  border: 4px solid #3b82f6;
-  box-shadow: 0 0 12px rgba(249, 115, 22, 0.4);
+#data-analysis {
+  margin-top: 40px;
 }
 
-.header__title {
-  margin: 30px 0 10px 0;
-  font-size: 32px;
-  line-height: 1.2;
-  font-family: "Helvetica Neue", sans-serif;
-  color: #24292f;
+#data-analysis .text-muted {
+  color: #555;
+  margin-bottom: 15px;
 }
 
-.header__subtitle {
-  color: #24292f;
-  font-size: 16px;
-  line-height: 1.4;
-  margin: 0;
+/* .data-flex {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.code-block {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 15px;
+  border-left: 4px solid #0d9488;
+}
+
+.code-block pre {
+  overflow-x: auto;
+  font-size: 14px;
+  background: #f1f1f1;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.image-block {
+  text-align: center;
+}
+
+.image-block img {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 8px;
+  cursor: zoom-in;
+  transition: transform 0.3s;
+}
+
+.image-block img:hover {
+  transform: scale(1.03);
+} */
+
+.img-caption {
+  font-size: 13px;
+  margin-top: 6px;
+  color: #777;
+}
+
+/* --- Стили для блока "Soft Skills и Сертификаты" --- */
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px; /* Расстояние между карточками */
+    margin-top: 5px;
+}
+
+.skill-card {
+    /* Базовый стиль карточки */
+    background: #f0f7ff; /* Светло-голубой фон */
+    border: 1px solid #d3e5ff;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    font-size: 14px;
+    
+    /* Стилизация под квадратные блоки (для визуального эффекта) */
+    flex: 1 1 calc(50% - 5px); /* 2 карточки в ряд на широком экране */
+    min-width: 150px; /* Минимальная ширина для каждой карточки */
+}
+
+/* Список сертификатов */
+.cert-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.cert-list li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.cert-list li:last-child {
+    border-bottom: none;
+}
+
+.cert-list a {
+    color: var(--accent); /* Используем синий акцент */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.cert-list a:hover {
+    text-decoration: underline;
 }
