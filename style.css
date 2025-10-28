@@ -401,6 +401,27 @@ table th {
   color: #777;
 }
 
+/* Clean list style for project block */
+.clean-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 5px;
+}
+.clean-list li {
+    margin-bottom: 5px;
+    padding-left: 10px; /* Небольшой отступ */
+    position: relative;
+}
+.clean-list li::before {
+    content: '•'; /* Простой маркер */
+    color: var(--accent); /* Синий акцент */
+    font-weight: bold;
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1em;
+}
+
+
 /* --- Стили для блока "Soft Skills и Сертификаты" --- */
 
 .skills-container {
